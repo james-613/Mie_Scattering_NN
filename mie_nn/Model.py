@@ -15,6 +15,9 @@ def build_model():
     return model
 
 def predict_scattering(model, wavelength, diameter, n, k, angle=None):
+    """
+    Run trained model for one particle (wavelength, diameter, n, k) over all angles (radians)
+    """
     if angle is None:
         angle = np.linspace(0, 180, 181) * np.pi / 180 # 181 angles from 0 to 180 degrees in radians
     angle = np.array(angle)
